@@ -1,27 +1,23 @@
-# Practica04
+## Enunciado Micropráctica 4
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.0.
+**OBJETIVO:** uso/practica con Angular Material, layouts, servicios y routing...
 
-## Development server
+**CONTEXTO/FUNCIONALIDAD:** La MP4 corresponde a la práctica de una "Agenda": desarrollar una agenda, con al menos:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Una pantalla principal
+- Listado de contactos
+- Filtrados de búsqueda
+- CRUD: alta, baja, modificación y eliminación de contactos
+- Datos de los contactos:
+  - Nombre
+  - Apellidos
+  - Dirección
+  - Cumpleaños
+  - Telefono(s): personal, de trabajo
+  - Empresa, Dirección, Cargo.
+  - Knowledge: campo de texto donde poner anotaciones del contacto
+  - Tipo de Contacto: personal, trabajo (en este caso incluir especialidad: desarrollo, agile, devops), compañero
 
-## Code scaffolding
+**OPCIONAL:** se valorará el uso de grids y layout. El alumno puede incluir adicionalmente lo que estime, dentro del contexto de la MP4
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**NOTA:** no debe usarse, BBDD, toda la funcionalidad/datos en memoria.
