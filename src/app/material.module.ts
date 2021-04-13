@@ -4,6 +4,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
     imports: [
@@ -11,14 +13,16 @@ import { MatInputModule } from '@angular/material/input';
         MatListModule,
         MatTableModule,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        MatSelectModule
     ],
     exports: [
         MatDividerModule,
         MatListModule,
         MatTableModule,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        MatSelectModule
     ]
 })
 
