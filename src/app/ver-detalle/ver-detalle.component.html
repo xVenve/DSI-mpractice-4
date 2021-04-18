@@ -1,5 +1,5 @@
 
-   
+
 <div  fxLayout="row" fxLayoutAlign="center">
 
 <div fxFlex=66 fxFlexFill fxLayout="column" fxLayoutAlign="center">
@@ -16,7 +16,7 @@
     </mat-expansion-panel-header>
     <div fxLayout="column" fxLayoutAlign="center">
         <mat-form-field><input matInput type="text" placeholder="Nombre" [(ngModel)]="contacto.nombre" name="nombre"/></mat-form-field>
-        <mat-form-field><input matInput type="text" placeholder="Teléfono" [(ngModel)]="contacto.telefono" name="email"/></mat-form-field>    
+        <mat-form-field><input matInput type="text" placeholder="Teléfono" [(ngModel)]="contacto.telefono" name="email"/></mat-form-field>
         <mat-form-field><input matInput type="text" placeholder="Email" [(ngModel)]="contacto.email" name="telefono"/></mat-form-field>
         <mat-form-field>
             <mat-label>Tipo</mat-label>
@@ -40,17 +40,17 @@
         <h3>Otros datos</h3>
         </mat-panel-title>
     </mat-expansion-panel-header>
-    
+
     <div fxLayout="column" fxLayoutAlign="center">
 
         <mat-form-field appearance="fill">
             <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker">
+            <input matInput [matDatepicker]="picker" placeholder="Cumpleaños" [(ngModel)]="contacto.cumple" name="cumple">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <mat-form-field><input matInput type="text" placeholder="Dirección" [(ngModel)]="contacto.direccion" name="direccion"/></mat-form-field>
-        <mat-form-field><input matInput type="text" placeholder="Empresa" [(ngModel)]="contacto.empresa" name="empresa"/></mat-form-field>    
+        <mat-form-field><input matInput type="text" placeholder="Empresa" [(ngModel)]="contacto.empresa" name="empresa"/></mat-form-field>
         <mat-form-field><input matInput type="text" placeholder="Cargo" [(ngModel)]="contacto.cargo" name="cargo"/></mat-form-field>
     </div>
 </mat-expansion-panel>
