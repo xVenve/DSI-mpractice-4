@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SalidaComponent } from './salida.component';
+import { VerInfoComponent } from './ver-info.component';
 
-describe('SalidaComponent', () => {
-  let component: SalidaComponent;
-  let fixture: ComponentFixture<SalidaComponent>;
+describe('VerInfoComponent', () => {
+  let component: VerInfoComponent;
+  let fixture: ComponentFixture<VerInfoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SalidaComponent ]
+      declarations: [ VerInfoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SalidaComponent);
+    fixture = TestBed.createComponent(VerInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

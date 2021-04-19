@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { DatePipe } from "@angular/common";
 
 // GENERICOS DE MATERIAL:
 import {MatIconModule} from '@angular/material/icon';
@@ -17,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -34,8 +36,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { VerDetalleComponent } from './ver-detalle/ver-detalle.component';
 import { ListadoComponent } from './listado/listado.component';
 import { GlobalService } from './global.service';
-import { SalidaComponent } from './salida/salida.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { VerInfoComponent } from './ver-info/ver-info.component';
 
 
 @NgModule({
@@ -43,24 +45,38 @@ import { PrincipalComponent } from './principal/principal.component';
     AppComponent,
     VerDetalleComponent,
     ListadoComponent,
-    SalidaComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    VerInfoComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,RouterModule,
-    BrowserAnimationsModule,FlexLayoutModule,
-    FormsModule,MatFormFieldModule, MatIconModule,
+    AppRoutingModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatIconModule,
 
-    MatInputModule,MatSelectModule,
-    MatButtonModule,MatCheckboxModule,
-    MatDatepickerModule,MatNativeDateModule,
-    MatTableModule,MatBadgeModule,  MatExpansionModule,
-    MatSnackBarModule,MatTooltipModule,MatToolbarModule,
-    MatInputModule,MatCheckboxModule,
-    MatProgressSpinnerModule,MatMenuModule
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
+    MatBadgeModule,
+    MatExpansionModule,
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatProgressSpinnerModule,
+    MatMenuModule,
   ],
-  providers: [GlobalService],
-  bootstrap: [AppComponent]
+  providers: [GlobalService, DatePipe],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

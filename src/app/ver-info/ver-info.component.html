@@ -1,0 +1,32 @@
+<div fxLayout="row" fxLayoutAlign="center">
+
+<div fxFlex=66 fxFlexFill fxLayout="column" fxLayoutAlign="center">
+
+<p fxFlex fxFlexAlign="center" class="titulo-ventana">Información de contacto</p>
+
+    <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{contacto.nombre}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <ng-container *ngIf="contacto.cumple!= undefined"><h3>Cumpleaños:</h3><p>{{getCumple(contacto)}}</p></ng-container>
+      <ng-container *ngIf="contacto.telefono!=''"><h3>Teléfono:</h3><p>{{contacto.telefono}}</p></ng-container>
+      <ng-container *ngIf="contacto.email!=''"><h3>Email:</h3><p>{{contacto.email}}</p></ng-container>
+      <ng-container *ngIf="contacto.tipo!='0'">
+        <h3>Tipo:</h3><p>{{getTipo(contacto)}}</p>
+        <ng-container *ngIf="contacto.tipo==2"><h3>Especialidad:</h3>
+        <p>{{getEspecialidad(contacto)}}</p></ng-container>
+        </ng-container>
+      <ng-container *ngIf="contacto.direccion!=''"><h3>Dirección:</h3><p>{{contacto.direccion}}</p></ng-container>
+      <ng-container *ngIf="contacto.empresa!=''"><h3>Empresa:</h3><p>{{contacto.empresa}}</p></ng-container>
+      <ng-container *ngIf="contacto.cargo!=''"><h3>Cargo:</h3><p>{{contacto.cargo}}</p></ng-container>
+      <ng-container *ngIf="contacto.info!=undefined"><h3>Anotaciones:</h3><p>{{contacto.info}}</p></ng-container>
+    </mat-card-content>
+</mat-card>
+
+<div fxLayout="row" style="margin-top:50px;">
+  <div fxFlex fxLayoutAlign="center">
+    <button (click)="volver()" mat-flat-button color="primary">Volver</button>
+  </div>
+
+</div>

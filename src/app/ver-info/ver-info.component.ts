@@ -2,21 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule,ActivatedRoute,NavigationStart } from '@angular/router';
 import { GlobalService } from '../global.service';
 import { Contacto,ViewContacto } from '../contacto';
+import { DatePipe } from "@angular/common";
 
 @Component({
-  selector: "app-ver-detalle",
-  templateUrl: "./ver-detalle.component.html",
-  styleUrls: ["./ver-detalle.component.scss"],
+  selector: "app-ver-info",
+  templateUrl: "./ver-info.component.html",
+  styleUrls: ["./ver-info.component.scss"],
 })
-export class VerDetalleComponent implements OnInit {
+export class VerInfoComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private global: GlobalService
+    private global: GlobalService,
+    private datePipe: DatePipe
   ) {}
-  public id;
 
   public contacto: Contacto;
+
+  public id;
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
@@ -27,23 +30,18 @@ export class VerDetalleComponent implements OnInit {
     });
   }
 
-  public getTipos() {
-    return ViewContacto.getTipos();
-  }
-
-  public getEspecialidad() {
-    return ViewContacto.getEspecialidad();
-  }
-
-  public aceptar() {
-    if (this.id > 0)
-      this.global.updateContacto(this.contacto.id, this.contacto);
-    else this.global.nuevoContacto(this.contacto);
-
+  public volver() {
     this.router.navigate(["list/"]);
   }
 
-  public cancelar() {
-    this.router.navigate(["list/"]);
+  public getCumple(o: Contacto) {
+    return this.datePipe.transform(ViewContacto.getCumple(o), "dd-MM-yyyy");
+  }
+
+  public getTipo(o: Contacto) {
+    return ViewContacto.getTipo(o);
+  }
+  public getEspecialidad(o: Contacto) {
+    return ViewContacto.getEspecialidades(o);
   }
 }

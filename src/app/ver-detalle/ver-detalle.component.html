@@ -26,6 +26,14 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
+        <mat-form-field *ngIf="contacto.tipo==2">
+          <mat-label>Especialidad</mat-label>
+          <mat-select [(ngModel)]="contacto.especialidad" name="tipo">
+            <mat-option *ngFor="let tipo of getEspecialidad();let i=index" [value]="i">
+              {{tipo}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
         <div fxFlex>
             <mat-checkbox [(ngModel)]="contacto.habitual" name="habitual">Habitual</mat-checkbox>
@@ -43,15 +51,19 @@
 
     <div fxLayout="column" fxLayoutAlign="center">
 
-        <mat-form-field appearance="fill">
-            <mat-label>Choose a date</mat-label>
+        <mat-form-field appearance="legacy">
+            <mat-label>Cumpleaños</mat-label>
             <input matInput [matDatepicker]="picker" placeholder="Cumpleaños" [(ngModel)]="contacto.cumple" name="cumple">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <mat-form-field><input matInput type="text" placeholder="Dirección" [(ngModel)]="contacto.direccion" name="direccion"/></mat-form-field>
         <mat-form-field><input matInput type="text" placeholder="Empresa" [(ngModel)]="contacto.empresa" name="empresa"/></mat-form-field>
         <mat-form-field><input matInput type="text" placeholder="Cargo" [(ngModel)]="contacto.cargo" name="cargo"/></mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label>Anotaciones</mat-label>
+          <textarea matInput [(ngModel)]="contacto.info"></textarea>
+        </mat-form-field>
     </div>
 </mat-expansion-panel>
 
