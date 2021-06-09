@@ -1,23 +1,23 @@
-## Enunciado Micropráctica 04
+## Statement Micro-practice 04
 
-**OBJETIVO:** uso/practica con Angular Material, layouts, servicios y routing...
+**OBJECTIVE:** use/practice with Angular Material, layouts, services and routing...
 
-**CONTEXTO/FUNCIONALIDAD:** La MP4 corresponde a la práctica de una "Agenda": desarrollar una agenda, con al menos:
+**CONTEXT/FUNCTIONALITY:** The MP4 corresponds to the practice of an "Agenda": develop an agenda, with at least:
 
-- Una pantalla principal
-- Listado de contactos
-- Filtrados de búsqueda
-- CRUD: alta, baja, modificación y eliminación de contactos
-- Datos de los contactos:
-  - Nombre
-  - Apellidos
-  - Dirección
-  - Cumpleaños
-  - Telefono(s): personal, de trabajo
-  - Empresa, Dirección, Cargo.
-  - Knowledge: campo de texto donde poner anotaciones del contacto
-  - Tipo de Contacto: personal, trabajo (en este caso incluir especialidad: desarrollo, agile, devops), compañero
+- A main screen
+- List of contacts
+- Search filters
+- CRUD: adding, deleting, modifying and removing contacts.
+- Contact data:
+  - First name
+  - Last name
+  - Address
+  - Birthday
+  - Phone number(s): personal, work, company, address, position.
+  - Company, Address, Position.
+  - Knowledge: text field where to put contact's notes
+  - Type of Contact: personal, work (in this case include specialty: development, agile, devops), partner
 
-**OPCIONAL:** se valorará el uso de grids y layout. El alumno puede incluir adicionalmente lo que estime, dentro del contexto de la MP4
+**OPTIONAL:** the use of grids and layout will be valued. The student may additionally include whatever he/she deems appropriate, within the context of the MP4.
 
-**NOTA:** no debe usarse, BBDD, toda la funcionalidad/datos en memoria.
+**NOTE:** should not be used, DB, all functionality/data in memory.

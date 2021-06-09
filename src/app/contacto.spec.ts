@@ -1,7 +1,7 @@
-import { Contacto } from './contacto';
+import { Contact } from './contact';
 
-describe('Contacto', () => {
+describe('Contact', () => {
   it('should create an instance', () => {
-    expect(new Contacto()).toBeTruthy();
+    expect(new Contact()).toBeTruthy();
   });
 });

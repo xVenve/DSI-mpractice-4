@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule,ActivatedRoute,NavigationStart } from '@angular/router';
 import { GlobalService } from '../global.service';
-import { Contacto,ViewContacto } from '../contacto';
+import { Contact,ViewContact } from '../contact';
 
 @Component({
   selector: "app-ver-detalle",
@@ -16,34 +16,33 @@ export class VerDetalleComponent implements OnInit {
   ) {}
   public id;
 
-  public contacto: Contacto;
+  public contact: Contact;
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       //console.log(params['params']);
       this.id = params["params"]["id"];
-      if (this.id >= 0) this.contacto = this.global.readContacto(this.id);
-      else this.contacto = new Contacto();
+      if (this.id >= 0) this.contact = this.global.readContact(this.id);
+      else this.contact = new Contact();
     });
   }
 
-  public getTipos() {
-    return ViewContacto.getTipos();
+  public getTypes() {
+    return ViewContact.getTypes();
   }
 
-  public getEspecialidad() {
-    return ViewContacto.getEspecialidad();
+  public getSpecialty() {
+    return ViewContact.getSpecialty();
   }
 
-  public aceptar() {
-    if (this.id > 0)
-      this.global.updateContacto(this.contacto.id, this.contacto);
-    else this.global.nuevoContacto(this.contacto);
+  public accept() {
+    if (this.id > 0) this.global.updateContact(this.contact.id, this.contact);
+    else this.global.newContact(this.contact);
 
     this.router.navigate(["list/"]);
   }
 
-  public cancelar() {
+  public cancel() {
     this.router.navigate(["list/"]);
   }
 }

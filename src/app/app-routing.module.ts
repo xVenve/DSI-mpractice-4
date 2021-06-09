@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "principal", component: PrincipalComponent },
   { path: "", redirectTo: "/principal", pathMatch: "full" },
   { path: "edit/:id", component: VerDetalleComponent },
-  { path: "detalles/:id", component: VerInfoComponent },
+  { path: "details/:id", component: VerInfoComponent },
 ];
 
 @NgModule({

@@ -4,39 +4,39 @@
 
 <div fxFlex=66 fxFlexFill fxLayout="column" fxLayoutAlign="center">
 
-<p fxFlex fxFlexAlign="center" class="titulo-ventana">Contacto</p>
+<p fxFlex fxFlexAlign="center" class="titulo-ventana">Contact</p>
 
 
 
 <mat-expansion-panel [expanded]="true">
     <mat-expansion-panel-header >
         <mat-panel-title>
-        <h3>Datos personales</h3>
+        <h3>Personal data</h3>.
         </mat-panel-title>
     </mat-expansion-panel-header>
     <div fxLayout="column" fxLayoutAlign="center">
-        <mat-form-field><input matInput type="text" placeholder="Nombre" [(ngModel)]="contacto.nombre" name="nombre"/></mat-form-field>
-        <mat-form-field><input matInput type="text" placeholder="Teléfono" [(ngModel)]="contacto.telefono" name="email"/></mat-form-field>
-        <mat-form-field><input matInput type="text" placeholder="Email" [(ngModel)]="contacto.email" name="telefono"/></mat-form-field>
+        <mat-form-field><input matInput type="text" placeholder="Name" [(ngModel)]="contact.name" name="name"/></mat-form-field>
+        <mat-form-field><input matInput type="text" placeholder="Phone" [(ngModel)]="contact.phone" name="email"/></mat-form-field>
+        <mat-form-field><input matInput type="text" placeholder="Email" [(ngModel)]="contact.email" name="email"/></mat-form-field>
         <mat-form-field>
-            <mat-label>Tipo</mat-label>
-            <mat-select [(ngModel)]="contacto.tipo" name="tipo">
-                <mat-option *ngFor="let tipo of getTipos();let i=index" [value]="i">
-                {{tipo}}
+            <mat-label>Type</mat-label>
+            <mat-select [(ngModel)]="contact.type" name="type">
+                <mat-option *ngFor="let type of getTypes();let i=index" [value]="i">
+                {{type}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field *ngIf="contacto.tipo==2">
-          <mat-label>Especialidad</mat-label>
-          <mat-select [(ngModel)]="contacto.especialidad" name="tipo">
-            <mat-option *ngFor="let tipo of getEspecialidad();let i=index" [value]="i">
-              {{tipo}}
+        <mat-form-field *ngIf="contact.type==2">
+          <mat-label>Specialty</mat-label>
+          <mat-select [(ngModel)]="contact.specialty" name="type">
+            <mat-option *ngFor="let type of getSpecialty();let i=index" [value]="i">
+              {{type}}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
         <div fxFlex>
-            <mat-checkbox [(ngModel)]="contacto.habitual" name="habitual">Habitual</mat-checkbox>
+            <mat-checkbox [(ngModel)]="contact.regular" name="regular">Regular</mat-checkbox>
         </div>
     </div>
 </mat-expansion-panel>
@@ -45,24 +45,24 @@
 <mat-expansion-panel>
     <mat-expansion-panel-header >
         <mat-panel-title>
-        <h3>Otros datos</h3>
+        <h3>Other information</h3>
         </mat-panel-title>
     </mat-expansion-panel-header>
 
     <div fxLayout="column" fxLayoutAlign="center">
 
         <mat-form-field appearance="legacy">
-            <mat-label>Cumpleaños</mat-label>
-            <input matInput [matDatepicker]="picker" placeholder="Cumpleaños" [(ngModel)]="contacto.cumple" name="cumple">
+            <mat-label>Birthday</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="Birthday" [(ngModel)]="contact.birthday" name="birthday">
             <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <mat-form-field><input matInput type="text" placeholder="Dirección" [(ngModel)]="contacto.direccion" name="direccion"/></mat-form-field>
-        <mat-form-field><input matInput type="text" placeholder="Empresa" [(ngModel)]="contacto.empresa" name="empresa"/></mat-form-field>
-        <mat-form-field><input matInput type="text" placeholder="Cargo" [(ngModel)]="contacto.cargo" name="cargo"/></mat-form-field>
+        <mat-form-field><input matInput type="text" placeholder="Dirección" [(ngModel)]="contact.address" name="address"/></mat-form-field>
+        <mat-form-field><input matInput type="text" placeholder="Company" [(ngModel)]="contact.company" name="company"/></mat-form-field>
+        <mat-form-field><input matInput type="text" placeholder="Charge" [(ngModel)]="contact.charge" name="charge"/></mat-form-field>
         <mat-form-field appearance="legacy">
-          <mat-label>Anotaciones</mat-label>
-          <textarea matInput [(ngModel)]="contacto.info"></textarea>
+          <mat-label>Annotations</mat-label>
+          <textarea matInput [(ngModel)]="contact.info"></textarea>
         </mat-form-field>
     </div>
 </mat-expansion-panel>
@@ -72,10 +72,10 @@
 
 <div  fxLayout="row" style="margin-top:50px;">
     <div fxFlex fxLayoutAlign="center">
-        <button (click)="aceptar()" mat-flat-button color="primary">Aceptar</button>
+        <button (click)="accept()" mat-flat-button color="primary">Accept</button>
     </div>
     <div fxFlex fxLayoutAlign="center">
-        <button (click)="cancelar()" mat-flat-button color="primary">Cancelar</button>
+        <button (click)="cancel()" mat-flat-button color="primary">Cancel</button>
     </div>
 </div>
 

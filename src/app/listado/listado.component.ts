@@ -1,7 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { Router, RouterModule,ActivatedRoute } from '@angular/router';
 import { GlobalService } from '../global.service';
-import { Contacto,ViewContacto } from '../contacto';
+import { Contact,ViewContact } from '../contact';
 import {MatTable} from '@angular/material/table';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { DatePipe } from "@angular/common";
@@ -25,77 +25,77 @@ export class ListadoComponent implements OnInit {
   ngOnInit() {}
 
   public displayedColumns: string[] = [
-    "nombre",
-    "cumple",
-    "direccion",
-    "telefono",
+    "name",
+    "birthday",
+    "address",
+    "phone",
     "email",
-    "tipo",
-    "habitual",
+    "type",
+    "regular",
     "action2",
   ];
-  //public dataSource:Contacto[]= this.global.datos;
+  //public dataSource:Contact[]= this.global.data;
 
-  public search_texto: string = "";
-  public search_tipo: number = 0;
+  public search_text: string = "";
+  public search_type: number = 0;
 
   public getData() {
-    if (this.search_tipo > 0)
-      if (this.search_texto != "")
-        return this.global.datos.filter(
+    if (this.search_type > 0)
+      if (this.search_text != "")
+        return this.global.data.filter(
           (c) =>
-            c.tipo == this.search_tipo &&
-            c.nombre.toLowerCase().startsWith(this.search_texto.toLowerCase())
+            c.type == this.search_type &&
+            c.name.toLowerCase().startsWith(this.search_text.toLowerCase())
         );
-      else return this.global.datos.filter((c) => c.tipo == this.search_tipo);
+      else return this.global.data.filter((c) => c.type == this.search_type);
     else {
-      if (this.search_texto != "")
-        return this.global.datos.filter((c) =>
-          c.nombre.toLowerCase().startsWith(this.search_texto.toLowerCase())
+      if (this.search_text != "")
+        return this.global.data.filter((c) =>
+          c.name.toLowerCase().startsWith(this.search_text.toLowerCase())
         );
-      else return this.global.datos;
+      else return this.global.data;
     }
   }
 
-  public editar(id) {
+  public edit(id) {
     this.router.navigate(["/edit/", id]);
   }
 
-  public detalles(id) {
-    this.router.navigate(["/detalles/", id]);
+  public details(id) {
+    this.router.navigate(["/details/", id]);
   }
 
-  public eliminar(id) {
-    let snackBarRef = this._snackBar.open("Contacto eliminado!", "", {
+  public delete(id) {
+    let snackBarRef = this._snackBar.open("Contact deleted!", "", {
       duration: 2000,
     });
-    this.global.eliminar(id);
+    this.global.delete(id);
     // Lanzar explicitamente el render solo es necesario con datasource estaticos...
     // si los datos son un Observable la tabla se repinta sola!.
     this.tabladatos.renderRows();
   }
 
-  public getTipos() {
-    return ViewContacto.getTipos();
+  public getTypes() {
+    return ViewContact.getTypes();
   }
 
-  public getHabitual(o: Contacto) {
-    return ViewContacto.getHabitual(o);
+  public getRegular(o: Contact) {
+    return ViewContact.getRegular(o);
   }
 
-  public getTipo(o: Contacto) {
-    return ViewContacto.getTipo(o);
+  public getType(o: Contact) {
+    return ViewContact.getType(o);
   }
 
-  public getEspecialidades(o: Contacto) {
-    return ViewContacto.getEspecialidades(o);
+  public getSpecialties(o: Contact) {
+    return ViewContact.getSpecialties(o);
   }
 
-  public getCumple(o: Contacto) {
-    return this.datePipe.transform(ViewContacto.getCumple(o), "dd-MM-yyyy");
+  public getBirthday(o: Contact) {
+    return this.datePipe.transform(ViewContact.getBirthday(o), "dd-MM-yyyy");
   }
 
-  public getNContactos() {
-    return this.global.getNContactos();
+  public getNContacts() {
+    return this.global.getNContacts();
   }
 }

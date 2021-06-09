@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule,ActivatedRoute,NavigationStart } from '@angular/router';
 import { GlobalService } from '../global.service';
-import { Contacto,ViewContacto } from '../contacto';
+import { Contact,ViewContact } from '../contact';
 import { DatePipe } from "@angular/common";
 
 @Component({
@@ -17,7 +17,7 @@ export class VerInfoComponent implements OnInit {
     private datePipe: DatePipe
   ) {}
 
-  public contacto: Contacto;
+  public contact: Contact;
 
   public id;
 
@@ -25,23 +25,24 @@ export class VerInfoComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       //console.log(params['params']);
       this.id = params["params"]["id"];
-      if (this.id >= 0) this.contacto = this.global.readContacto(this.id);
-      else this.contacto = new Contacto();
+      if (this.id >= 0) this.contact = this.global.readContact(this.id);
+      else this.contact = new Contact();
     });
   }
 
-  public volver() {
+  public back() {
     this.router.navigate(["list/"]);
   }
 
-  public getCumple(o: Contacto) {
-    return this.datePipe.transform(ViewContacto.getCumple(o), "dd-MM-yyyy");
+  public getBirthday(o: Contact) {
+    return this.datePipe.transform(ViewContact.getBirthday(o), "dd-MM-yyyy");
   }
 
-  public getTipo(o: Contacto) {
-    return ViewContacto.getTipo(o);
+  public getType(o: Contact) {
+    return ViewContact.getType(o);
   }
-  public getEspecialidad(o: Contacto) {
-    return ViewContacto.getEspecialidades(o);
+
+  public getSpecialty(o: Contact) {
+    return ViewContact.getSpecialties(o);
   }
 }
